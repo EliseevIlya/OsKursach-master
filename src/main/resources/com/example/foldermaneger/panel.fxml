@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.foldermaneger.Controllers.PanelController">
+    <children>
+        <HBox layoutY="2.0" prefHeight="26.0" prefWidth="850.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <children>
+            <Button fx:id="btnBack" mnemonicParsing="false" onAction="#btnBackAction" text="&lt;" />
+            <Button fx:id="btnForward" mnemonicParsing="false" onAction="#btnForwardAction" text="&gt;" />
+                <ComboBox fx:id="disksBox" onAction="#selectDiskAction" prefHeight="26.0" prefWidth="26.0" />
+                <TextField fx:id="pathField" prefHeight="26.0" prefWidth="280.0" HBox.hgrow="ALWAYS" />
+                <Button mnemonicParsing="false" onAction="#btnPathUpAction" prefHeight="26.0" prefWidth="58.0" text="Назад" />
+            <Button fx:id="btnRefresh" mnemonicParsing="false" onAction="#btnRefreshAction" prefHeight="26.0" prefWidth="85.0" text="Обновить" />
+            <TextField fx:id="searchField" prefHeight="26.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+            <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#btnSearchAction" text="Search" />
+            </children>
+        </HBox>
+      <HBox layoutY="26.0" prefHeight="514.0" prefWidth="850.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0">
+         <children>
+            <TreeView fx:id="treeViewPaths" prefHeight="514.0" prefWidth="199.0" HBox.hgrow="ALWAYS" />
+              <TableView fx:id="filesTable" prefHeight="514.0" prefWidth="698.0" HBox.hgrow="ALWAYS">
+                  <columns>
+                      <TableColumn fx:id="fileTypeInfo" prefWidth="51.0" text="Тип" />
+                      <TableColumn fx:id="fileNameInfo" prefWidth="353.0" text="Имя" />
+                      <TableColumn fx:id="fileSizeInfo" prefWidth="127.0" text="Размер" />
+                      <TableColumn fx:id="fileDateInfo" prefWidth="152.0" text="Дата" />
+                  </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </HBox>
+    </children>
+</AnchorPane>
